@@ -1,0 +1,392 @@
+# ========================================
+# Butterfly主题自定义配置
+# 参考顶级公司UI设计：Apple, Google, Vercel
+# ========================================
+
+# --------------------------------------
+# 导航栏设置 - Apple风格极简设计
+# --------------------------------------
+nav:
+  logo: /images/logo.png
+  display_title: true
+  fixed: true  # 固定导航栏
+
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-user
+  友链: /links/ || fas fa-link
+
+# --------------------------------------
+# 社交媒体链接
+# --------------------------------------
+social:
+  fab fa-github: https://github.com/wcz234 || Github || '#181717'
+  fas fa-envelope: mailto:2574070432@qq.com || Email || '#4285f4'
+
+# --------------------------------------
+# 图片设置 - 精心设计的视觉系统
+# --------------------------------------
+favicon: /images/icons/favicon.png
+
+avatar:
+  img: /images/avatar.jpg
+  effect: true  # 头像悬停旋转效果
+
+# 禁用顶部图片
+disable_top_img: false
+
+# 默认顶部图片 - 使用渐变背景
+default_top_img:
+
+# 首页顶部图片
+index_img: /images/covers/index-cover.jpg
+
+# 归档页顶部图片
+archive_img: /images/covers/archive-cover.jpg
+
+# 标签页顶部图片
+tag_img: /images/covers/tag-cover.jpg
+
+# 分类页顶部图片
+category_img: /images/covers/category-cover.jpg
+
+# 网站背景 - 使用渐变色
+background: 'linear-gradient(to bottom right, #f5f7fa 0%, #c3cfe2 100%)'
+
+# 文章封面设置
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+    - /images/covers/default-1.jpg
+    - /images/covers/default-2.jpg
+    - /images/covers/default-3.jpg
+    - /images/covers/default-4.jpg
+    - /images/covers/default-5.jpg
+
+# --------------------------------------
+# 代码块设置 - Vercel风格
+# --------------------------------------
+code_blocks:
+  theme: mac  # Mac风格代码块
+  macStyle: true  # 启用Mac窗口样式
+  height_limit: 600  # 代码块高度限制
+  word_wrap: false
+  copy: true  # 复制按钮
+  language: true  # 显示语言
+  shrink: false  # 不收缩代码块
+  fullpage: false
+
+# --------------------------------------
+# 首页设置
+# --------------------------------------
+# 首页副标题 - 打字机效果
+subtitle:
+  enable: true
+  # 打字机效果文本
+  text:
+    - 我观观音观自在
+    - 我见真武见真我
+    - 分享技术心得，记录学习历程
+    - 探索前沿技术，追求极致体验
+  textColor: '#fff'
+  startDelay: 300  # 延迟300ms开始
+  typeSpeed: 150   # 打字速度
+  loop: true       # 循环播放
+  loopDelay: 1200  # 循环延迟
+
+# 首页文章meta信息
+post_meta:
+  page:
+    date_type: both  # 显示创建和更新时间
+    date_format: relative  # 相对时间格式
+    categories: true
+    tags: true
+    label: true
+  post:
+    position: left
+    date_type: both
+    date_format: relative
+    categories: true
+    tags: true
+    label: true
+
+# --------------------------------------
+# 文章设置
+# --------------------------------------
+# 文章版权信息
+post_copyright:
+  enable: true
+  decode: false
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 打赏功能
+reward:
+  enable: false
+
+# 文章目录TOC
+toc:
+  post: true
+  page: true
+  number: true  # 显示编号
+  expand: true  # 默认展开
+  style_simple: false  # 简洁模式
+  scroll_percent: true  # 显示滚动百分比
+
+# 文章锚点
+anchor:
+  button:
+    enable: true
+    always_show: false
+  auto_update: true
+
+# --------------------------------------
+# 侧边栏设置 - 卡片式设计
+# --------------------------------------
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right  # 侧边栏位置
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: 分享技术心得，记录学习历程
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/wcz234
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的博客！<br>这里记录技术与生活的点滴 ✨
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date  # 按日期排序
+    sort_order: desc
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none  # none/true/false
+  card_tags:
+    enable: true
+    limit: 40
+    color: true  # 彩色标签
+    orderby: random  # 随机排序
+    order: 1
+    sort_order: desc
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: desc
+    limit: 8
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order: desc
+
+# --------------------------------------
+# 页脚设置
+# --------------------------------------
+footer:
+  owner:
+    enable: true
+    since: 2025
+  custom_text: Made with ❤️ by wcz234
+  copyright: true  # 显示版权信息
+
+# --------------------------------------
+# 美化设置 - Apple风格
+# --------------------------------------
+# 美化相关
+beautify:
+  enable: true
+  field: post  # site/post
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: '#F47466'
+
+# 全局字体设置
+font:
+  global-font-size: '16px'
+  code-font-size: '14px'
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+  code-font-family: 'Fira Code', 'Monaco', 'Consolas', monospace
+
+# --------------------------------------
+# 暗黑模式设置
+# --------------------------------------
+darkmode:
+  enable: true
+  button: true  # 显示切换按钮
+  autoChangeMode: false  # 不自动切换
+  start: '18:00'  # 18:00开始暗黑模式
+  end: '06:00'    # 06:00结束暗黑模式
+
+# --------------------------------------
+# 加载动画 - 流畅的用户体验
+# --------------------------------------
+# 页面加载动画
+preloader:
+  enable: true
+  # 加载动画类型
+  source: 1  # 1-7可选
+  pace_css_url: /css/pace/pace-theme-minimal.css
+
+# 页面过渡动画
+enter_transitions: true  # 页面进入动画
+
+# --------------------------------------
+# 鼠标效果
+# --------------------------------------
+# 鼠标点击效果
+fireworks:
+  enable: false
+
+# 点击出现爱心
+click_heart:
+  enable: false
+
+# 点击出现文字
+ClickShowText:
+  enable: false
+
+# --------------------------------------
+# 搜索设置
+# --------------------------------------
+local_search:
+  enable: true
+  preload: true
+  CDN:
+
+# --------------------------------------
+# 评论系统
+# --------------------------------------
+comments:
+  use: false  # 暂不启用评论
+  text: true
+  lazyload: true
+  count: true
+  card_post_count: true
+
+# --------------------------------------
+# 分享设置
+# --------------------------------------
+share:
+  enable: true
+  sites: twitter,facebook,wechat,weibo,qq
+
+# --------------------------------------
+# 数学公式支持
+# --------------------------------------
+katex:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
+
+mathjax:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
+
+# --------------------------------------
+# 图片懒加载
+# --------------------------------------
+lazyload:
+  enable: true
+  field: site  # site/post
+  placeholder: /images/loading.svg
+  blur: true
+
+# --------------------------------------
+# Pjax - 无刷新页面加载
+# --------------------------------------
+pjax:
+  enable: true
+  exclude:
+    - /music/
+    - /no-pjax/
+
+# --------------------------------------
+# PWA设置
+# --------------------------------------
+pwa:
+  enable: false
+  manifest: /manifest.json
+  theme_color: '#fff'
+  apple_touch_icon: /images/icons/apple-touch-icon.png
+  favicon_32_32: /images/icons/favicon-32x32.png
+  favicon_16_16: /images/icons/favicon-16x16.png
+  mask_icon: /images/icons/safari-pinned-tab.svg
+
+# --------------------------------------
+# 字数统计
+# --------------------------------------
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# --------------------------------------
+# 站点地图
+# --------------------------------------
+# 需要安装: npm install hexo-generator-sitemap --save
+sitemap:
+  enable: false
+
+# --------------------------------------
+# Open Graph
+# --------------------------------------
+Open_Graph_meta:
+  enable: true
+  option:
+    twitter_card: summary_large_image
+    twitter_image:
+    twitter_id:
+    twitter_site:
+    google_plus:
+    fb_admins:
+    fb_app_id:
+
+# --------------------------------------
+# 侧边栏按钮
+# --------------------------------------
+rightside_scroll_percent: true  # 显示滚动百分比
+
+# --------------------------------------
+# 其他设置
+# --------------------------------------
+# 夜间模式遮罩透明度
+nightshift:
+  enable: false
+
+# 阅读模式
+readmode:
+  enable: true
+  button: true
+
+# 侧边栏展开按钮
+aside_button: true
+
+# --------------------------------------
+# 自定义资源注入
+# --------------------------------------
+inject:
+  head:
+    # 自定义CSS - Apple风格
+    - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    # 自定义JS可以在这里添加

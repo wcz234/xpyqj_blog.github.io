@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 心平愈千疾的博客
+title: 心平愈千疾
 subtitle: 我观观音观自在 我见真武见真我
 description: 分享技术心得，记录学习历程
 keywords: 技术,学习,生活
@@ -102,7 +102,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:wcz234/xpyqj_blog.github.io.git
+  repo: git@github.com:wcz234/wcz234.github.io.git
   branch: main
   name: wcz234
   email: 2574070432@qq.com

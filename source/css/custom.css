@@ -1,0 +1,634 @@
+/* ========================================
+ * 自定义样式 - Apple风格现代化设计
+ * 参考：Apple, Google Material, Vercel
+ * ======================================== */
+
+/* --------------------------------------
+ * 全局变量定义
+ * -------------------------------------- */
+:root {
+  /* Apple风格配色 */
+  --apple-blue: #007aff;
+  --apple-green: #34c759;
+  --apple-indigo: #5856d6;
+  --apple-orange: #ff9500;
+  --apple-pink: #ff2d55;
+  --apple-purple: #af52de;
+  --apple-red: #ff3b30;
+  --apple-teal: #5ac8fa;
+  --apple-yellow: #ffcc00;
+
+  /* 灰度系统 */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* 毛玻璃效果 */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+
+  /* 动画时间 */
+  --transition-fast: 0.15s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.5s;
+
+  /* 圆角 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* 阴影系统 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* 暗黑模式变量 */
+[data-theme='dark'] {
+  --glass-bg: rgba(30, 30, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------
+ * 全局样式优化
+ * -------------------------------------- */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+/* 选中文字效果 */
+::selection {
+  background-color: var(--apple-blue);
+  color: #fff;
+}
+
+/* 滚动条美化 - Apple风格 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 10px;
+  transition: background var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: var(--gray-800);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: var(--gray-600);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* --------------------------------------
+ * 导航栏 - 毛玻璃效果
+ * -------------------------------------- */
+#nav {
+  background: var(--glass-bg) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#nav.fixed {
+  box-shadow: var(--shadow-md);
+}
+
+/* 导航菜单项 */
+#nav .menus_items .menus_item a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+#nav .menus_items .menus_item a:hover {
+  background: var(--gray-100);
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] #nav .menus_items .menus_item a:hover {
+  background: var(--gray-700);
+}
+
+/* Logo动画 */
+#site-name {
+  transition: transform var(--transition-base);
+}
+
+#site-name:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------
+ * 卡片样式 - 现代化设计
+ * -------------------------------------- */
+.card-widget {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card-widget:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+/* 文章卡片 */
+#recent-posts > .recent-post-item {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+#recent-posts > .recent-post-item:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-6px);
+}
+
+/* 文章封面图片 */
+#recent-posts > .recent-post-item .post_cover {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+#recent-posts > .recent-post-item .post_cover img {
+  transition: transform var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#recent-posts > .recent-post-item:hover .post_cover img {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------
+ * 按钮样式 - Apple风格
+ * -------------------------------------- */
+.button,
+button,
+.btn {
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.button:hover,
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.button:active,
+button:active,
+.btn:active {
+  transform: translateY(0);
+}
+
+/* 主要按钮 */
+.button-primary {
+  background: var(--apple-blue);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: #0051d5;
+}
+
+/* --------------------------------------
+ * 标签云 - 彩色标签
+ * -------------------------------------- */
+#card-tags .tag-cloud a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  margin: 0.25rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+#card-tags .tag-cloud a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --------------------------------------
+ * 代码块 - Mac风格
+ * -------------------------------------- */
+figure.highlight {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin: 1.5rem 0;
+  background: var(--gray-50);
+}
+
+[data-theme='dark'] figure.highlight {
+  background: var(--gray-900);
+}
+
+/* Mac窗口控制按钮 */
+figure.highlight::before {
+  content: '';
+  display: block;
+  height: 30px;
+  background: #f6f8fa;
+  border-bottom: 1px solid var(--gray-200);
+  background-image:
+    radial-gradient(circle, #fc625d 6px, transparent 8px),
+    radial-gradient(circle, #fdbc40 6px, transparent 8px),
+    radial-gradient(circle, #35cd4b 6px, transparent 8px);
+  background-position: 12px 50%, 32px 50%, 52px 50%;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+}
+
+[data-theme='dark'] figure.highlight::before {
+  background: var(--gray-800);
+  border-bottom: 1px solid var(--gray-700);
+}
+
+/* 代码行号 */
+.gutter {
+  border-right: 1px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+[data-theme='dark'] .gutter {
+  border-right: 1px solid var(--gray-700);
+  background: var(--gray-800);
+}
+
+/* --------------------------------------
+ * 分页 - 现代化样式
+ * -------------------------------------- */
+#pagination .page-number,
+#pagination .extend {
+  min-width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: var(--radius-md);
+  margin: 0 0.25rem;
+  transition: all var(--transition-base);
+}
+
+#pagination .page-number:hover,
+#pagination .extend:hover {
+  background: var(--apple-blue);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+#pagination .page-number.current {
+  background: var(--apple-blue);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------
+ * 页脚 - 简洁设计
+ * -------------------------------------- */
+#footer {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--glass-border);
+  padding: 2rem 0;
+}
+
+/* --------------------------------------
+ * 返回顶部按钮 - 浮动效果
+ * -------------------------------------- */
+#go-up {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+#go-up:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  background: var(--apple-blue);
+  color: #fff;
+}
+
+/* --------------------------------------
+ * 文章内容排版优化
+ * -------------------------------------- */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.post-content h1 {
+  font-size: 2.5rem;
+}
+
+.post-content h2 {
+  font-size: 2rem;
+}
+
+.post-content h3 {
+  font-size: 1.5rem;
+}
+
+/* 链接样式 */
+.post-content a {
+  color: var(--apple-blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--apple-blue);
+}
+
+/* 引用块 */
+.post-content blockquote {
+  border-left: 4px solid var(--apple-blue);
+  padding: 1rem 1.5rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+}
+
+[data-theme='dark'] .post-content blockquote {
+  background: var(--gray-800);
+}
+
+/* --------------------------------------
+ * 加载动画 - 流畅体验
+ * -------------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-slow) ease-out;
+}
+
+/* 骨架屏动画 */
+@keyframes skeleton {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+  background-size: 200% 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+/* --------------------------------------
+ * 移动端优化
+ * -------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+  }
+
+  .card-widget {
+    border-radius: var(--radius-md);
+  }
+
+  #recent-posts > .recent-post-item {
+    border-radius: var(--radius-md);
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .post-content h1 {
+    font-size: 2rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* --------------------------------------
+ * 暗黑模式切换按钮美化
+ * -------------------------------------- */
+#darkmode-button {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+#darkmode-button:hover {
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --------------------------------------
+ * 打字机效果优化
+ * -------------------------------------- */
+#subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------
+ * 图片优化
+ * -------------------------------------- */
+img {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+/* --------------------------------------
+ * 表格样式
+ * -------------------------------------- */
+table {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+table th {
+  background: var(--gray-100);
+  font-weight: 600;
+}
+
+[data-theme='dark'] table th {
+  background: var(--gray-800);
+}
+
+table td,
+table th {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-200);
+}
+
+[data-theme='dark'] table td,
+[data-theme='dark'] table th {
+  border-color: var(--gray-700);
+}
+
+/* --------------------------------------
+ * 侧边栏头像效果
+ * -------------------------------------- */
+#aside-content .card-author img {
+  border-radius: 50%;
+  transition: all var(--transition-slow);
+  border: 3px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+}
+
+#aside-content .card-author img:hover {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--apple-blue);
+}
+
+/* --------------------------------------
+ * 搜索框美化
+ * -------------------------------------- */
+.search-dialog {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+}
+
+.search-input {
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--glass-border);
+  transition: all var(--transition-base);
+}
+
+.search-input:focus {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* --------------------------------------
+ * 平滑滚动
+ * -------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------
+ * 焦点可见性优化
+ * -------------------------------------- */
+*:focus-visible {
+  outline: 2px solid var(--apple-blue);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------
+ * 性能优化 - GPU加速
+ * -------------------------------------- */
+.card-widget,
+#recent-posts > .recent-post-item,
+#nav,
+button,
+.button,
+.btn {
+  will-change: transform;
+  transform: translateZ(0);
+}
